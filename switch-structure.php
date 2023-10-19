@@ -27,7 +27,6 @@ if (isset($_GET['grade'])) {
         default: 
         echo "Hmm seems weird ?!";
         }
-
     }
 
 ?>
