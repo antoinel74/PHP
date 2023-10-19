@@ -168,4 +168,29 @@ if (isset($_GET['soccer_age']) && isset ($_GET['soccer_gender'])) {
 }
 
 echo $defaultMessage;
+
+// 8. School sucks
+
+echo '<h2>School sucks!</h2>
+<form action="" method="get">
+<label>Grade a student :</label>
+<input type="number" min="0" max="20" name="grade">
+</form>';
+
+if (isset($_GET['grade'])) {
+	$grade = intval($_GET['grade']);
+	if ($grade <= 4) {
+		echo "This work is really bad. Get better now!";
+	} else if ($grade > 4 && $grade < 9) {
+		echo "This is not sufficient.";
+	} else if ($grade == 10) {
+		echo "Barely enough!";
+	} else if ($grade > 10 && $grade < 14) {
+		echo "Not bad but you can get better";
+	} else if ($grade > 14 && $grade < 18) {
+		echo "Fantastic ! Good job!";
+	} else {
+		echo "Too good to be true. Cheater!";
+	}
+}
 ?>
