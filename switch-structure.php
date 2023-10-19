@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 echo '<h2>School sucks!</h2>
 <form action="" method="get">
 <label>Grade a student :</label>
 <input type="number" min="0" max="20" name="grade">
-</form>'; 
+</form>';
 
 if (isset($_GET['grade'])) {
     $grade = intval($_GET['grade']);
@@ -24,9 +24,7 @@ if (isset($_GET['grade'])) {
         case ($grade > 14 && $grade <= 19):
             echo "Fantastic ! Good job!";
             break;
-        default: 
-        echo "Hmm seems weird ?!";
-        }
+        default:
+            echo "Hmm seems weird ?!";
     }
-
-?>
+}

@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="./style/excuse.css" type="text/css">
+<link rel="icon" type="image/png" href="/img/fav.png">
+
 <?php echo '
 <h1>Fake Excuses Generator</h1>
 <form action="" method="get">
@@ -28,6 +31,7 @@ if (isset($_GET['name']) && isset($_GET['gender']) && isset($_GET['teacher']) &&
     $reason = $_GET['reason'];
     $greeting = "Dear $teacher";
     $currentDate = date('d/m/Y');
+    $polite = "Kind regards";
 
     $genderN = ($gender === "girl") ? "daughter" : "son";
     $excuse = '';
@@ -66,22 +70,23 @@ if (isset($_GET['name']) && isset($_GET['gender']) && isset($_GET['teacher']) &&
             $random = array_rand($excuses);
             $excuse = $excuses[$random];
             break;
-        default: 
-        $excuses = [
-            "Our household experienced a rebellion led by cookies, and our $genderN $name is crucial to negotiations. Sorry for the unconvenience.",
-            "Please understand that our $genderN has been summoned to defend the world's rubber duckies from an imminent threat. $name will not attend class today. Deeply sorry about that.",
-            "Our $genderN $name has participated in the daring Rodeo Championship. It's been a thrilling experience, but now we need to retrieved the body.",
-            "Our $genderN was unexpectedly teleported to the moon. $name will return once the earth come closer. Thanks for your understanding.",
-            "We regret to inform you that our $genderN is undergoing rigorous sport training sessions. $name will attend an international championship this year and has to be ready. Thanks & sorry."
-        ];
-        $random = array_rand($excuses);
-        $excuse = $excuses[$random];
-        break;
+        default:
+            $excuses = [
+                "Our household experienced a rebellion led by cookies, and our $genderN $name is crucial to negotiations. Sorry for the unconvenience.",
+                "Please understand that our $genderN has been summoned to defend the world's rubber duckies from an imminent threat. $name will not attend class today. Deeply sorry about that.",
+                "Our $genderN $name has participated in the daring Rodeo Championship. It's been a thrilling experience, but now we need to retrieved the body.",
+                "Our $genderN was unexpectedly teleported to the moon. $name will return once the earth come closer. Thanks for your understanding.",
+                "We regret to inform you that our $genderN is undergoing rigorous sport training sessions. $name will attend an international championship this year and has to be ready. Thanks & sorry."
+            ];
+            $random = array_rand($excuses);
+            $excuse = $excuses[$random];
+            break;
     }
     echo "<div class='excuse_container'>
     <p class='excuse_date'>{$currentDate}</p>
     <p class='excuse__greeting'>{$greeting},</p>
     <p class='excuse__text'>{$excuse}</p>
+    <p class='excuse__polite'>{$polite}</p>
     </div>";
 }
 ?>
