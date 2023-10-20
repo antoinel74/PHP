@@ -1,4 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap");
+
+html {
+  background-color: #49c5b6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 h1 {
-  font-size: 3em;
+  font-family: "Chakra Petch";
+  font-size: clamp(1.8rem, -0.9rem + 8.5vw, 4rem);
+  margin: 2rem 0;
   text-align: center;
+  color: #00273d;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #00273d;
+  color: white;
+  border-radius: 12px;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+input,
+select {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+label {
+  font-weight: 600;
+  color: #49c5b6;
+}
+
+input[type="submit"] {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(1, 58, 1);
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    flex-direction: column;
+  }
+  input[type="text"] {
+    width: 220px;
+  }
+}
+
+.excuse__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #00273d;
+  color: white;
+  box-shadow: 15px 15px 33px rgba(27, 27, 27, 0.1);
+  font-style: italic;
+}
+
+.excuse__date {
+  width: 100%;
+  color: #49c5b6;
+  margin-right: 3rem;
+  font-weight: bold;
+  text-align: end;
 }

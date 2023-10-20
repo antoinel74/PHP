@@ -1,16 +1,20 @@
 <link rel="stylesheet" href="./style/excuse.css" type="text/css">
 <link rel="icon" type="image/png" href="/img/fav.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <?php echo '
-<h1>Fake Excuses Generator</h1>
+<h1>&#128394; Fake Excuses Generator</h1>
 <form action="" method="get">
 <label>Name :</label>
 <input type="text" name="name" placeholder="ex: Jonathan">
-<label>Gender of the child:</label>
-<label>Boy:</label>
+<div class="gender_div">
+<label>Gender :</label>
+<label>♂</label>
 <input type="radio" name="gender" value="boy">
-<label>Girl:</label>
+<label>♀</label>
 <input type="radio" name="gender" value="girl">
+</div>
 <label>Name of the Teacher</label>
 <input type="text" name="teacher" placeholder="ex: Mr Burns">
 <label>Reason of the absence</label>
@@ -82,8 +86,8 @@ if (isset($_GET['name']) && isset($_GET['gender']) && isset($_GET['teacher']) &&
             $excuse = $excuses[$random];
             break;
     }
-    echo "<div class='excuse_container'>
-    <p class='excuse_date'>{$currentDate}</p>
+    echo "<div class='excuse__container'>
+    <p class='excuse__date'>{$currentDate}</p>
     <p class='excuse__greeting'>{$greeting},</p>
     <p class='excuse__text'>{$excuse}</p>
     <p class='excuse__polite'>{$polite}</p>
