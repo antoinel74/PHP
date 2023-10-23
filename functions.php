@@ -123,3 +123,21 @@ echo '<h2>Display a msg error + appropriated class</h2>';
 echo showMsg('Incorrect email adress', "error");
 echo showMsg('Valid email adress', "info");
 echo showMsg('You password has been leaked!', "warning");
+
+// Decapitalize a string 
+$capString = "STOP YELLING I CAN'T HEAR MYSELF THINKING!!";
+echo '<h2>Decapitalize a string</h2>';
+echo strtolower($capString);
+
+// Function to calculate cone volume
+echo '<h2>Calculate the volume of a cone</h2>';
+
+function coneVolume($ray, $height)
+{
+    $volume = $ray * $ray * 3.14 * $height * (1 / 3);
+    echo '<p>The volume of a cone which ray is ' . $ray . ' and height is ' . $height . ' is ' . $volume . ' cm3</p>';
+    return $volume;
+}
+
+coneVolume(5, 2);
+coneVolume(3, 4);
