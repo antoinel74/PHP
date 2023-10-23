@@ -26,8 +26,8 @@ function shuffleWord($word)
     $output = $firstLetter . $midLetters . $lastLetter;
     return $output;
 }
-/* TESTING : shuffleWord("Michele"); */
 
+/* TESTING : shuffleWord("Michele"); */
 foreach ($words as $key => $word) {
     $words[$key] = shuffleWord($word);
 }
@@ -84,3 +84,42 @@ echo ' Output : ' . acronymer($input);
 
 
 // Replace 'e' with 'æ'
+echo '<h2>Replace a with ae</h2>';
+
+function replaceLetter($word)
+{
+    /*     $wordbreak = str_split($word); */
+    $replacedWord = str_replace('a', 'æ', $word);
+    /*     $replacedWord = implode('', $replacedLetter); */
+    return $replacedWord;
+}
+
+$input = "cacotrophie";
+echo replaceLetter($input);
+
+// Revert last exercices 
+echo '<h2>Replace æ with a</h2>';
+
+function replaceAE($word)
+{
+    $replacedWord = str_replace('æ', 'ae', $word);
+    return $replacedWord;
+}
+
+$input2 = "cæcotrophie";
+echo replaceAE($input2);
+
+// Add a class and a error msg + info as default value
+function showMsg($message, $cssClass)
+{
+    if ($cssClass === 'info' || $cssClass === 'error' || $cssClass === 'warning') {
+        return "<div class='$cssClass'>$message</div>";
+    } else {
+        return "<div class='info'>$message</div>";
+    }
+}
+
+echo '<h2>Display a msg error + appropriated class</h2>';
+echo showMsg('Incorrect email adress', "error");
+echo showMsg('Valid email adress', "info");
+echo showMsg('You password has been leaked!', "warning");
